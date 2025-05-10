@@ -465,7 +465,7 @@ section h2::after {
 }
 
 .signature {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-family: 'Pacifico', cursive, var(--font-sans);
     color: var(--secondary-color);
     position: relative;
@@ -474,6 +474,44 @@ section h2::after {
 .signature span {
     font-size: 1.5rem;
     letter-spacing: 1px;
+}
+
+/* Download CV Button */
+.download-cv {
+    margin: 15px 0 20px;
+}
+
+.cv-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(100, 255, 218, 0.1);
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.cv-btn i {
+    margin-right: 8px;
+    font-size: 0.9rem;
+}
+
+.cv-btn:hover {
+    background-color: rgba(100, 255, 218, 0.2);
+    transform: translateY(-2px);
+}
+
+.contact-cv {
+    margin-bottom: 20px;
+}
+
+.contact-cv-btn {
+    background-color: transparent;
+    border-color: rgba(100, 255, 218, 0.5);
 }
 
 .about-social-links {
