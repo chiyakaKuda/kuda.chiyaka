@@ -11,15 +11,62 @@
 <body>
 
     <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
+    <nav class="main-nav" aria-label="Main Navigation">
+        <div class="nav-header">
+            <span class="nav-logo">KC</span>
+            <button class="nav-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <ul class="nav-links">
+            <li class="nav-item">
+                <a href="#home" class="nav-link" aria-label="Home Section">
+                    <span class="nav-icon"><i class="fas fa-home"></i></span>
+                    <span class="nav-text">Home</span>
+                    <span class="nav-indicator"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#about" class="nav-link" aria-label="About Section">
+                    <span class="nav-icon"><i class="fas fa-user"></i></span>
+                    <span class="nav-text">About</span>
+                    <span class="nav-indicator"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#skills" class="nav-link" aria-label="Skills Section">
+                    <span class="nav-icon"><i class="fas fa-code"></i></span>
+                    <span class="nav-text">Skills</span>
+                    <span class="nav-indicator"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#projects" class="nav-link" aria-label="Projects Section">
+                    <span class="nav-icon"><i class="fas fa-project-diagram"></i></span>
+                    <span class="nav-text">Projects</span>
+                    <span class="nav-indicator"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#services" class="nav-link" aria-label="Services Section">
+                    <span class="nav-icon"><i class="fas fa-cogs"></i></span>
+                    <span class="nav-text">Services</span>
+                    <span class="nav-indicator"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#contact" class="nav-link" aria-label="Contact Section">
+                    <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                    <span class="nav-text">Contact</span>
+                    <span class="nav-indicator"></span>
+                </a>
+            </li>
         </ul>
+        <div class="nav-progress-container">
+            <div class="nav-progress-bar" id="navProgressBar"></div>
+        </div>
     </nav>
 
     <!-- Landing Page -->
@@ -33,12 +80,6 @@
                         <span>U</span>
                         <span>D</span>
                         <span>A</span>
-                        <span>K</span>
-                        <span>W</span>
-                        <span>A</span>
-                        <span>S</span>
-                        <span>H</span>
-                        <span>E</span>
                     </div>
                     <p class="tagline">The living code that can.</p>
                 </div>
@@ -105,14 +146,113 @@
     <section id="skills" class="section">
         <div class="container">
             <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-item"><span>Python</span></div>
-                <div class="skill-item"><span>JavaScript</span></div>
-                <div class="skill-item"><span>SQL</span></div>
-                <div class="skill-item"><span>HTML/CSS</span></div>
-                <div class="skill-item"><span>Git</span></div>
-                <div class="skill-item"><span>Data Structures</span></div>
-                <div class="skill-item"><span>Object-Oriented Programming</span></div>
+            <div class="skills-categories">
+                <!-- Operating Systems -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-laptop"></i>
+                        <h3>Operating Systems</h3>
+                    </div>
+                    <div class="category-skills">
+                        <div class="skill-item"><span>Windows</span></div>
+                        <div class="skill-item"><span>Linux</span></div>
+                        <div class="skill-item"><span>macOS</span></div>
+                    </div>
+                </div>
+                
+                <!-- Frontend -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Frontend</h3>
+                    </div>
+                    <div class="category-skills">
+                        <div class="skill-item"><span>HTML5</span></div>
+                        <div class="skill-item"><span>CSS3</span></div>
+                        <div class="skill-item"><span>JavaScript</span></div>
+                        <div class="skill-item"><span>React</span></div>
+                        <div class="skill-item"><span>Bootstrap</span></div>
+                    </div>
+                </div>
+                
+                <!-- Backend -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-server"></i>
+                        <h3>Backend</h3>
+                    </div>
+                    <div class="category-skills">
+                        <div class="skill-item"><span>Python</span></div>
+                        <div class="skill-item"><span>Node.js</span></div>
+                        <div class="skill-item"><span>Express</span></div>
+                        <div class="skill-item"><span>RESTful APIs</span></div>
+                    </div>
+                </div>
+                
+                <!-- Database -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-database"></i>
+                        <h3>Database</h3>
+                    </div>
+                    <div class="category-skills">
+                        <div class="skill-item"><span>SQL</span></div>
+                        <div class="skill-item"><span>MySQL</span></div>
+                        <div class="skill-item"><span>PostgreSQL</span></div>
+                        <div class="skill-item"><span>MongoDB</span></div>
+                    </div>
+                </div>
+                
+                <!-- Mobile Development -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Mobile Development</h3>
+                    </div>
+                    <div class="category-skills">
+                        <div class="skill-item"><span>React Native</span></div>
+                        <div class="skill-item"><span>Android Basics</span></div>
+                    </div>
+                </div>
+                
+                <!-- Version Control -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-code-branch"></i>
+                        <h3>Version Control</h3>
+                    </div>
+                    <div class="category-skills">
+                        <div class="skill-item"><span>Git</span></div>
+                        <div class="skill-item"><span>Github</span></div>
+                        <div class="skill-item"><span>GitLab</span></div>
+                    </div>
+                </div>
+                
+                <!-- Hosting -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-cloud"></i>
+                        <h3>Hosting</h3>
+                    </div>
+                    <div class="category-skills">
+                        <div class="skill-item"><span>Netlify</span></div>
+                        <div class="skill-item"><span>Heroku</span></div>
+                        <div class="skill-item"><span>Vercel</span></div>
+                    </div>
+                </div>
+                
+                <!-- Programming Concepts -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-sitemap"></i>
+                        <h3>Programming Concepts</h3>
+                    </div>
+                    <div class="category-skills">
+                        <div class="skill-item"><span>Data Structures</span></div>
+                        <div class="skill-item"><span>Algorithms</span></div>
+                        <div class="skill-item"><span>OOP</span></div>
+                    </div>
+                </div>
             </div>
             <div class="home-navigation">
                 <a href="#about" class="nav-arrow nav-prev">←</a>
@@ -178,26 +318,101 @@
     <section id="services" class="section">
         <div class="container">
             <h2>Services</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <i class="fas fa-code"></i>
-                    <h3>Web Development</h3>
-                    <p>Creating responsive and user-friendly websites using modern web technologies.</p>
+            <div class="services-showcase">
+                <!-- Web Development -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Web Development</h3>
+                        <div class="service-tags">
+                            <span>Frontend</span>
+                            <span>Backend</span>
+                            <span>Responsive</span>
+                        </div>
+                        <p>Creating modern, responsive websites and web applications with focus on performance, accessibility and user experience.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Responsive websites that work on all devices</li>
+                            <li><i class="fas fa-check"></i> Interactive UIs with modern frameworks</li>
+                            <li><i class="fas fa-check"></i> API integration and backend development</li>
+                        </ul>
+                        <div class="service-cta">
+                            <a href="#contact">Request Service <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-item">
-                    <i class="fas fa-sitemap"></i>
-                    <h3>System Design</h3>
-                    <p>Designing scalable system architectures based on specific requirements.</p>
+                
+                <!-- Android Development -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-android"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Android Development</h3>
+                        <div class="service-tags">
+                            <span>Mobile</span>
+                            <span>Native</span>
+                            <span>Java</span>
+                        </div>
+                        <p>Building native Android applications with intuitive interfaces and smooth performance for various device sizes.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Native Android applications</li>
+                            <li><i class="fas fa-check"></i> Material Design principles</li>
+                            <li><i class="fas fa-check"></i> Integration with device features</li>
+                        </ul>
+                        <div class="service-cta">
+                            <a href="#contact">Request Service <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-item">
-                    <i class="fas fa-database"></i>
-                    <h3>Database Setup</h3>
-                    <p>Creating and optimizing database schema and queries for efficient data management.</p>
+                
+                <!-- WhatsApp Chatbot Development -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>WhatsApp Chatbot</h3>
+                        <div class="service-tags">
+                            <span>Automation</span>
+                            <span>Integration</span>
+                            <span>API</span>
+                        </div>
+                        <p>Developing intelligent WhatsApp chatbots that automate customer interactions, support, and business processes.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Automated customer service chatbots</li>
+                            <li><i class="fas fa-check"></i> Integration with business systems</li>
+                            <li><i class="fas fa-check"></i> Natural language processing</li>
+                        </ul>
+                        <div class="service-cta">
+                            <a href="#contact">Request Service <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-item">
-                    <i class="fas fa-bug"></i>
-                    <h3>Software Troubleshooting</h3>
-                    <p>Identifying and fixing bugs and performance issues in existing applications.</p>
+                
+                <!-- Windows Desktop Applications -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-windows"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Windows Desktop Apps</h3>
+                        <div class="service-tags">
+                            <span>Desktop</span>
+                            <span>C#</span>
+                            <span>.NET</span>
+                        </div>
+                        <p>Creating efficient and user-friendly Windows desktop applications for business or personal use.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Native Windows applications</li>
+                            <li><i class="fas fa-check"></i> Modern UI/UX design</li>
+                            <li><i class="fas fa-check"></i> Database integration</li>
+                        </ul>
+                        <div class="service-cta">
+                            <a href="#contact">Request Service <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="home-navigation">
@@ -211,25 +426,101 @@
     <section id="contact" class="section">
         <div class="container">
             <h2>Get In Touch</h2>
-            <div class="contact-content">
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="contact-heading">
+                        <h3>Let's discuss your project</h3>
+                        <p>I'm available for freelance projects and internship opportunities. Connect with me via phone, email or social media.</p>
                     </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-item-content">
+                                <h4>Call Me</h4>
+                                <p>+1 (234) 567-8901</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-item-content">
+                                <h4>Email</h4>
+                                <p>kudakwashe@example.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-item-content">
+                                <h4>Location</h4>
+                                <p>New York, NY, USA</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <textarea placeholder="Your Message" required></textarea>
+                    
+                    <div class="contact-social">
+                        <h4>Find Me On</h4>
+                        <div class="social-icons">
+                            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn Profile">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com" target="_blank" aria-label="GitHub Profile">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank" aria-label="Twitter Profile">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://instagram.com" target="_blank" aria-label="Instagram Profile">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
                     </div>
-                    <button type="submit">Send Message</button>
-                </form>
-                <div class="social-links">
-                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="mailto:kudakwashe@example.com"><i class="fas fa-envelope"></i></a>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form class="contact-form">
+                        <div class="form-header">
+                            <h3>Send Me A Message</h3>
+                            <p>Got a project or proposal? Let's talk.</p>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
+            
             <div class="home-navigation">
                 <a href="#services" class="nav-arrow nav-prev">←</a>
                 <a href="#home" class="nav-arrow nav-next">→</a>
