@@ -1,3 +1,118 @@
+/* Page Loader */
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.page-loader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* SVG Animation Styles */
+.logo-animation {
+    stroke: var(--secondary-color);
+    stroke-width: 4;
+    fill: none;
+    margin-bottom: 10px;
+}
+
+/* K Letter Animation */
+.k-stroke-1, .k-stroke-2, .k-stroke-3, .c-stroke, .connecting-line {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    animation-fill-mode: forwards;
+}
+
+.k-stroke-1 {
+    animation: drawLine 0.8s 0.2s forwards;
+}
+
+.k-stroke-2 {
+    animation: drawLine 0.8s 0.5s forwards;
+}
+
+.k-stroke-3 {
+    animation: drawLine 0.8s 0.8s forwards;
+}
+
+/* C Letter Animation */
+.c-stroke {
+    stroke-dasharray: 150;
+    stroke-dashoffset: 150;
+    animation: drawLine 1s 1.2s forwards;
+}
+
+/* Connecting Line Animation */
+.connecting-line {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: drawConnectingLine 0.6s 1.5s forwards;
+    opacity: 0;
+}
+
+/* Text Fade In */
+.logo-text {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    opacity: 0;
+    animation: fadeIn 0.8s 2s forwards;
+}
+
+.logo-text span {
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    color: var(--secondary-color);
+}
+
+/* Animation Keyframes */
+@keyframes drawLine {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawConnectingLine {
+    0% {
+        stroke-dashoffset: 100;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
 /* Base styles and variables */
 :root {
     --primary-color: #0a192f;
@@ -1094,6 +1209,48 @@ footer {
     footer {
         margin-bottom: 70px; /* Add space for mobile navbar */
         padding-bottom: 30px;
+    }
+}
+
+/* Scroll to Top Button */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(17, 34, 64, 0.8);
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+    transform: translateY(-5px);
+}
+
+@media screen and (max-width: 768px) {
+    .scroll-top {
+        bottom: 80px; /* Position above mobile navbar */
+        right: 20px;
+        width: 40px;
+        height: 40px;
     }
 }
 

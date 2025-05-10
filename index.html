@@ -9,6 +9,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-container">
+            <svg class="logo-animation" width="200" height="100" viewBox="0 0 200 100">
+                <!-- K Letter -->
+                <g class="letter letter-k">
+                    <path class="k-stroke-1" d="M40,20 L40,80" stroke-linecap="round" />
+                    <path class="k-stroke-2" d="M40,50 L70,20" stroke-linecap="round" />
+                    <path class="k-stroke-3" d="M40,50 L70,80" stroke-linecap="round" />
+                </g>
+                
+                <!-- C Letter -->
+                <g class="letter letter-c">
+                    <path class="c-stroke" d="M160,30 A30,30 0 0,0 130,50 A30,30 0 0,0 160,70" stroke-linecap="round" />
+                </g>
+                
+                <!-- Connecting Line -->
+                <path class="connecting-line" d="M70,50 L130,50" stroke-linecap="round" />
+            </svg>
+            <div class="logo-text">
+                <span class="logo-text-k">K</span>
+                <span class="logo-text-c">C</span>
+            </div>
+        </div>
+    </div>
 
     <!-- Navigation -->
     <nav class="main-nav" aria-label="Main Navigation">
@@ -542,6 +567,11 @@
     <footer>
         <p>&copy; 2025 Kudakwashe Chiyaka. All Rights Reserved.</p>
     </footer>
+    
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-top" aria-label="Scroll to top of page">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="scripts/main.js"></script>
 </body>

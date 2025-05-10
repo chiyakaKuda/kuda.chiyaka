@@ -1,4 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Page Loader
+    const pageLoader = document.querySelector('.page-loader');
+    
+    // Hide loader after page is fully loaded and animation completes
+    window.addEventListener('load', function() {
+        // Wait for SVG animation to complete (2.5s for animation + 0.5s pause)
+        setTimeout(function() {
+            pageLoader.classList.add('fade-out');
+        }, 3000);
+    });
+    
+    // Fallback in case 'load' event doesn't fire
+    setTimeout(function() {
+        pageLoader.classList.add('fade-out');
+    }, 4000);
     // Elements
     const sections = document.querySelectorAll('.section');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -100,6 +115,26 @@ document.addEventListener('DOMContentLoaded', function() {
             contactForm.reset();
         });
     }
+    
+    // Scroll to top button functionality
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    // Show button when scrolled down
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add('visible');
+        } else {
+            scrollToTopBtn.classList.remove('visible');
+        }
+    });
+    
+    // Smooth scroll to top when clicked
+    scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
     
     // Smooth reveal animation for sections
     const revealElements = document.querySelectorAll('.section > .container');
