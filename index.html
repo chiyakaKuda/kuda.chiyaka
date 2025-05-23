@@ -7,33 +7,28 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 </head>
 <body>
     <!-- Page Loader -->
-    <div class="page-loader">
-        <div class="loader-container">
-            <svg class="logo-animation" width="200" height="100" viewBox="0 0 200 100">
-                <!-- K Letter -->
-                <g class="letter letter-k">
-                    <path class="k-stroke-1" d="M40,20 L40,80" stroke-linecap="round" />
-                    <path class="k-stroke-2" d="M40,50 L70,20" stroke-linecap="round" />
-                    <path class="k-stroke-3" d="M40,50 L70,80" stroke-linecap="round" />
-                </g>
-                
-                <!-- C Letter -->
-                <g class="letter letter-c">
-                    <path class="c-stroke" d="M160,30 A30,30 0 0,0 130,50 A30,30 0 0,0 160,70" stroke-linecap="round" />
-                </g>
-                
-                <!-- Connecting Line -->
-                <path class="connecting-line" d="M70,50 L130,50" stroke-linecap="round" />
-            </svg>
-            <div class="logo-text">
-                <span class="logo-text-k">K</span>
-                <span class="logo-text-c">C</span>
-            </div>
+   <div class="page-loader">
+    <div class="loader-container">
+        <div class="loader-ring">
+            <div class="loader-ring-light"></div>
+            <div class="loader-ring-track"></div>
+        </div>
+        <div class="loader-name">
+            <span data-text="K">K</span>
+            <span data-text="U">U</span>
+            <span data-text="D">D</span>
+            <span data-text="A">A</span>
+            
         </div>
     </div>
+</div>
+
 
     <!-- Navigation -->
     <nav class="main-nav" aria-label="Main Navigation">
@@ -105,6 +100,7 @@
                         <span>U</span>
                         <span>D</span>
                         <span>A</span>
+                        
                     </div>
                     <p class="tagline">The living code that can.</p>
                 </div>
@@ -139,7 +135,7 @@
     <section id="about" class="section">
         <div class="container">
             <h2>About Me</h2>
-            <div class="about-content">
+            <div class="about-content" data-aos="fade-up" data-aos-duration="1000">
                 <div class="about-image-container">
                     <img src="assets/images/kuda.jpeg" alt="Kudakwashe Chiyaka" class="profile-image">
                 </div>
@@ -179,7 +175,7 @@
             <h2>Skills</h2>
             <div class="skills-categories">
                 <!-- Operating Systems -->
-                <div class="skill-category">
+                <div class="skill-category" data-aos="fade-right" data-aos-delay="200">
                     <div class="category-header">
                         <i class="fas fa-laptop"></i>
                         <h3>Operating Systems</h3>
@@ -297,7 +293,7 @@
         <div class="container">
             <h2>Projects</h2>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
                     <h3>Student Management System</h3>
                     <p>A web application for tracking student records, course registrations, and academic performance.</p>
                     <div class="tech-stack">
@@ -307,7 +303,7 @@
                     </div>
                     <a href="https://github.com" class="project-link">View on GitHub <i class="fas fa-external-link-alt"></i></a>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
                     <h3>Weather Forecast App</h3>
                     <p>A responsive web application that provides real-time weather data for any location using a public API.</p>
                     <div class="tech-stack">
@@ -317,7 +313,7 @@
                     </div>
                     <a href="https://github.com" class="project-link">View on GitHub <i class="fas fa-external-link-alt"></i></a>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
                     <h3>E-commerce Database Design</h3>
                     <p>A comprehensive database schema designed for an online retail platform with customer, inventory, and order management.</p>
                     <div class="tech-stack">
@@ -327,7 +323,7 @@
                     </div>
                     <a href="https://github.com" class="project-link">View on GitHub <i class="fas fa-external-link-alt"></i></a>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
                     <h3>Personal Portfolio Website</h3>
                     <p>A minimalist portfolio site (this one!) designed to showcase my skills, projects, and services.</p>
                     <div class="tech-stack">
@@ -351,7 +347,7 @@
             <h2>Services</h2>
             <div class="services-showcase">
                 <!-- Web Development -->
-                <div class="service-card">
+                <div class="service-card" data-aos="flip-left" data-aos-delay="200">
                     <div class="service-icon">
                         <i class="fas fa-globe"></i>
                     </div>
@@ -375,7 +371,7 @@
                 </div>
                 
                 <!-- Android Development -->
-                <div class="service-card">
+                <div class="service-card" data-aos="flip-left" data-aos-delay="200">
                     <div class="service-icon">
                         <i class="fab fa-android"></i>
                     </div>
@@ -399,7 +395,7 @@
                 </div>
                 
                 <!-- WhatsApp Chatbot Development -->
-                <div class="service-card">
+                <div class="service-card" data-aos="flip-left" data-aos-delay="200">
                     <div class="service-icon">
                         <i class="fab fa-whatsapp"></i>
                     </div>
@@ -423,7 +419,7 @@
                 </div>
                 
                 <!-- Windows Desktop Applications -->
-                <div class="service-card">
+                <div class="service-card" data-aos="flip-left" data-aos-delay="200">
                     <div class="service-icon">
                         <i class="fab fa-windows"></i>
                     </div>

@@ -1,14 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Page Loader
-    const pageLoader = document.querySelector('.page-loader');
-    
-    // Hide loader after page is fully loaded and animation completes
-    window.addEventListener('load', function() {
-        // Wait for SVG animation to complete (2.5s for animation + 0.5s pause)
-        setTimeout(function() {
-            pageLoader.classList.add('fade-out');
-        }, 3000);
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: false,
+        mirror: true
     });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    // Page Loader
+   window.addEventListener('load', () => {
+    const loader = document.querySelector('.page-loader');
+    loader.style.opacity = '0';
+    setTimeout(() => {
+        loader.style.display = 'none';
+    }, 3000);
+});
+
     
     // Fallback in case 'load' event doesn't fire
     setTimeout(function() {

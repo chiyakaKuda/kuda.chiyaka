@@ -1,117 +1,64 @@
-/* Page Loader */
 .page-loader {
+    background: #0a0a0a;
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--bg-color);
+    z-index: 1000;
     display: flex;
-    justify-content: center;
     align-items: center;
-    z-index: 9999;
-    transition: opacity 0.8s ease, visibility 0.8s ease;
+    justify-content: center;
+    transition: opacity 5s ease-in-out;
+    opacity: 1;
 }
 
-.page-loader.fade-out {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.loader-container {
+.loader-ring {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    border-radius: 50%;
 }
 
-/* SVG Animation Styles */
-.logo-animation {
-    stroke: var(--secondary-color);
-    stroke-width: 4;
-    fill: none;
-    margin-bottom: 10px;
+.loader-ring-light {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: 3px solid transparent;
+    border-top: 3px solid #24ecff;
+    border-radius: 50%;
+    animation: rotate 2s linear infinite;
 }
 
-/* K Letter Animation */
-.k-stroke-1, .k-stroke-2, .k-stroke-3, .c-stroke, .connecting-line {
-    stroke-dasharray: 100;
-    stroke-dashoffset: 100;
-    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-    animation-fill-mode: forwards;
+.loader-ring-track {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: 3px solid #24ecff22;
+    border-radius: 50%;
 }
 
-.k-stroke-1 {
-    animation: drawLine 0.8s 0.2s forwards;
+.loader-name {
+    position: absolute;
+    text-align: center;
 }
 
-.k-stroke-2 {
-    animation: drawLine 0.8s 0.5s forwards;
-}
-
-.k-stroke-3 {
-    animation: drawLine 0.8s 0.8s forwards;
-}
-
-/* C Letter Animation */
-.c-stroke {
-    stroke-dasharray: 150;
-    stroke-dashoffset: 150;
-    animation: drawLine 1s 1.2s forwards;
-}
-
-/* Connecting Line Animation */
-.connecting-line {
-    stroke-dasharray: 100;
-    stroke-dashoffset: 100;
-    animation: drawConnectingLine 0.6s 1.5s forwards;
-    opacity: 0;
-}
-
-/* Text Fade In */
-.logo-text {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    opacity: 0;
-    animation: fadeIn 0.8s 2s forwards;
-}
-
-.logo-text span {
+.loader-name span {
+    font-size: 45px;
+    color: #fff;
     display: inline-block;
-    font-size: 2.5rem;
-    font-weight: 700;
-    font-family: var(--font-mono);
-    color: var(--secondary-color);
+    animation: bounce 0.5s ease infinite alternate;
+    margin: 0 5px;
 }
 
-/* Animation Keyframes */
-@keyframes drawLine {
-    to {
-        stroke-dashoffset: 0;
-    }
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
-@keyframes drawConnectingLine {
-    0% {
-        stroke-dashoffset: 100;
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-    }
-    100% {
-        stroke-dashoffset: 0;
-        opacity: 1;
-    }
+@keyframes bounce {
+    100% { transform: translateY(-20px); }
 }
 
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
 
 /* Base styles and variables */
 :root {
